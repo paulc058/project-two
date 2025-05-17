@@ -1,0 +1,39 @@
+//SPDX-Licence-Identifier:MIT
+pragma solidity ^0.8.17;
+contract ERC20Token {
+    function totalsupply()external view returns (uint256);
+         function Balanceof (address account)external view returns (uint256);
+    function transfer (address recipient , uint256 amount )public external view returns;
+    function allowance (address owner, address spender)external view returns;
+    function approve (address owner , address spender, uint256 amount);external view returns;
+    function TransferFrom (address sender , address recipient ,uint256 amount );external view returns;
+}
+    event approval(address indexed owner, address indexed spender, uint256 value);
+    event transfer(address indexed owner, address indexed spender, uint256 value);
+    event balance(uint256 value , bool  );
+
+
+    contract Owner is ERC20Token{
+        public string name "funny meme token"
+                public string symbol "MK"
+                public uint8 decimals = 17;
+                uint256 private _totalsupply = 27;
+         function Transfer (address to ,uint256 amount ) external returns(bool) {
+             require (_BalanceOf(msg.sender,amount))
+            require(_Balanceof(to));
+                _Transfer(to,amount);
+                 return true;
+                 mapping(address => uint256 private balances ;)
+                 mapping(address => mapping(uint256 => allowance ))external view returns (bool) public balances ;)
+         }
+        require(recipient != address(0)"please transfer the correct amount to the right address");
+        require(sender != address(0"please transfer the correct amount from the right address"););
+        require(_balances[Sender] >= amount, "Insufficent funds");
+        require(_allowances[msg.sender][sender] >= amount, "Balance exceeded");
+
+
+        _allowances[msg.sender][sender] -=amount;
+        _balances[sender][msg.sender] -=amount;
+        _balances[recipient] += amount;
+
+
